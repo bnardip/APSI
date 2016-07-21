@@ -1,0 +1,313 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+	
+	<script type="text/javascript">
+		/*global $ */
+		$(document).ready(function() {
+
+			"use strict";
+
+			$('.menu > ul > li:has( > ul)').addClass('menu-dropdown-icon');
+			//Checks if li has sub (ul) and adds class for toggle icon - just an UI
+
+			$('.menu > ul > li > ul:not(:has(ul))').addClass('normal-sub');
+			//Checks if drodown menu's li elements have anothere level (ul), if not the dropdown is shown as regular dropdown, not a mega menu (thanks Luka Kladaric)
+
+			$(".menu > ul").before("<a href=\"#\" class=\"menu-mobile\">Menu</a>");
+
+			//Adds menu-mobile class (for mobile toggle menu) before the normal menu
+			//Mobile menu is hidden if width is more then 959px, but normal menu is displayed
+			//Normal menu is hidden if width is below 959px, and jquery adds mobile menu
+			//Done this way so it can be used with wordpress without any trouble
+
+			$(".menu > ul > li").hover(function(e) {
+				if(!$('#prod-dropdown').hasClass('tour-enabled')) {
+					if ($(window).width() > 943) {
+						$(this).children("ul").stop(true, false).fadeToggle(150);
+						e.preventDefault();
+					}
+				}
+			});
+			//If width is more than 943px dropdowns are displayed on hover
+
+			$(".menu > ul > li").click(function() {
+				if(!$('#prod-dropdown').hasClass('tour-enabled')) {
+					if ($(window).width() <= 943) {
+						$(this).children("ul").fadeToggle(150);
+					}
+				}
+			});
+			//If width is less or equal to 943px dropdowns are displayed on click (thanks Aman Jain from stackoverflow)
+
+			$(".menu-mobile").click(function(e) {
+				$(".menu > ul").toggleClass('show-on-mobile');
+				e.preventDefault();
+			});
+			//when clicked on mobile-menu, normal menu is shown as a list, classic rwd menu story (thanks mwl from stackoverflow)
+
+			$( ".menu > ul > li" ).each(function() {
+				if( $(this).children().attr("href") === location.href){
+					$(this).addClass('current-menu-item');
+				}
+			});
+			//A complete hack for now
+
+		});
+	</script>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<title>Publishing Services, LLC &#8211; Just another WordPress site</title>
+<link rel="alternate" type="application/rss+xml" title="Publishing Services, LLC &raquo; Feed" href="https://dev.pubsvs.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Publishing Services, LLC &raquo; Comments Feed" href="https://dev.pubsvs.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/dev.pubsvs.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='jquery-ui-style-css'  href='http://dev.pubsvs.com/wp-content/themes/pub/css/jquery-ui.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A400%2C400italic%2C300%2C700%7COpen+Sans%3A400%2C400italic%2C300%2C700&#038;ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css-css'  href='http://dev.pubsvs.com/wp-content/themes/pub/css/normalize.min.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css-css'  href='http://dev.pubsvs.com/wp-content/themes/pub/css/font-awesome.min.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='hopscotch-css-css'  href='http://dev.pubsvs.com/wp-content/themes/pub/css/hopscotch.min.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='styles-css-css'  href='http://dev.pubsvs.com/wp-content/themes/pub/css/style.css?ver=4.4.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='https://dev.pubsvs.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dev.pubsvs.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://dev.pubsvs.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel="canonical" href="https://dev.pubsvs.com/" />
+<link rel='shortlink' href='https://dev.pubsvs.com/' />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="home page page-id-34 page-template page-template-page-home page-template-page-home-php group-blog">
+
+
+<div id="wrapper">
+			<div class="page-announcement" style="background-color: #f2dede; color: #a94442; border-color: #ebccd1;">
+			<div class="inner-page-announcement" class="span_12">
+				<h3 class="page-announcement-title" style="color: #a94442;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Advantage to Message Central Replication Delay</h3>
+									<div class="announcement-text">
+						We are experiencing a delay in replication of data from Advantage to Message Central. As a result, some of the updates to records in Advantage that have been made over the past few hours have not as of yet made it into Message Central. 					</div>
+							</div>
+		</div>
+		<header>
+		<div id="inner-header" class="span_12">
+			<div class="span_8 logo-area"><a href="/"><img src="http://dev.pubsvs.com/wp-content/themes/pub/img/pubsvs-logo.png" border=0 /></a></div>
+			<div class="span_4"><a id="header-app-info" target="_blank" class="confluence-link" href="https://wiki.pubsvs.com/display/PUBSUPPORT/Publishing+Services+Support">Application Information</a></div>
+		</div>
+		<nav class="span_12 nav-bar">
+			<div class="menu-container inner-nav">
+				<div class="menu">
+					<ul>
+																											<li><a href="https://dev.pubsvs.com/about-us/">About Us</a></li>
+																												<li><a href="#prods-toplevel">Products & Services</a>
+									<ul id="prod-dropdown">
+																																												<li><a href="#">Application</a>
+													<ul>
+																											<li><a href="https://dev.pubsvs.com/advantage/">Advantage</a></li>
+																																									<li><a href="https://dev.pubsvs.com/ecommerce-services/">Ecommerce Services</a></li>
+																																									<li><a href="https://dev.pubsvs.com/email-services/">Email Services</a></li>
+																																									<li><a href="https://dev.pubsvs.com/iris/">IRIS</a></li>
+																																									<li><a href="https://dev.pubsvs.com/middleware/">Middleware</a></li>
+																																								</ul>
+												</li>
+																																																							<li><a href="#">Ancillary</a>
+													<ul>
+																											<li><a href="https://dev.pubsvs.com/electronic-payments-processing/">Electronic Payments Processing</a></li>
+																																									<li><a href="https://dev.pubsvs.com/fulfillment/">Fulfillment</a></li>
+																																									<li><a href="https://dev.pubsvs.com/namebank/">Namebank</a></li>
+																																									<li><a href="https://dev.pubsvs.com/renewals/">Renewals</a></li>
+																																								</ul>
+												</li>
+																																																							<li><a href="#">Client Support</a>
+													<ul>
+																											<li><a href="https://dev.pubsvs.com/client-service/">Client Service</a></li>
+																																									<li><a href="https://dev.pubsvs.com/customer-support/">Customer Support</a></li>
+																																									<li><a href="https://dev.pubsvs.com/learning-development/">Learning & Development</a></li>
+																																								</ul>
+												</li>
+																																																							<li><a href="#">Development</a>
+													<ul>
+																											<li><a href="https://dev.pubsvs.com/architecture-board/">Architecture Board</a></li>
+																																									<li><a href="https://dev.pubsvs.com/prototype/">Prototype</a></li>
+																																								</ul>
+												</li>
+																																																							<li><a href="#">Project Management</a>
+													<ul>
+																											<li><a href="https://dev.pubsvs.com/project-management/">Project Management</a></li>
+																																								</ul>
+												</li>
+																														</ul>
+								</li>
+																												<li><a href="https://dev.pubsvs.com/contact-us/">Contact Us</a></li>
+																		</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div id="main-content">
+	<div class="hero-image"><img src="http://dev.pubsvs.com/wp-content/themes/pub/img/pubsvs-home-hero.jpg" /></div>
+	<main>
+		<div class="inner-main">
+			
+<article id="post-34" class="post-34 page type-page status-publish hentry">
+	<header>
+		<h1 id="title-head"><span class="heading-bold">Welcome to Publishing Services</span><span class="heading-regular"> | Building Partnerships</span></h1>
+	</header>
+		<div class="span_12">
+<p>Publishing Services provides the platforms and systems that support more than 30 of the world’s leading privately owned media and supplement companies. But our impact doesn’t stop there.</p>
+<p>Our expert teams strive to provide a fast-paced, flexible, and functional foundation for growth. Day to day, we build and support the enterprise applications used by entrepreneurial businesses, allowing them to focus on profits and business growth.</p>
+<p>And while this model hasn’t changed over the years, Publishing Services has grown and evolved into a dependable support and enterprise applications company.</p>
+<p>As the Agora companies evolved and expanded, Publishing Services has grown with them using a client-focused approach. To that end, we hold ourselves to a high level of customer service and accountability that only a true partner can provide.</p>
+<p>Because here at Publishing Services, we believe in building partnerships, not just systems.</p>
+</div>
+<p><!-- DO NOT DELETE THIS CLOSING DIV TAG! YES THIS ONE TO THE RIGHT. STOP DELETING! --></div>
+<p><!-- DO NOT DELETE THIS CLOSING DIV TAG! YES THIS ONE TO THE LEFT. STOP DELETING! --></p>
+<p><!-- END .inner-main --></p>
+<div class="outer-key-area">
+<div class="inner-key-area">
+<div class="span_4 key-area">
+<p><img src="https://dev.pubsvs.com/wp-content/uploads/2016/04/spotlight-communication-300x129-1.jpg" border="0" /></p>
+<h2>Communication</h2>
+<p><em>“Communication is the real work of leadership”</em> – Nitin Nohria, Dean of Harvard Business School</p>
+<p>Good communication is central to any partnership, and here at Publishing Services we make it our top priority. We are committed to keeping each of our clients informed on any issues that impact their businesses, allowing them to make smart, timely business decisions.</p>
+<p>And just as good communication is essential to success, ineffective or incomplete communication can be wasteful and even detrimental to your business. This is why we strive for excellent communication every single day.</p>
+<p>We promise to engage our clients in all the topics that concern their businesses with simple, direct and honest communication.</p>
+</div>
+<div class="span_4 key-area key-mid">
+<p><img src="https://dev.pubsvs.com/wp-content/uploads/2016/04/spotlight-collaboration-300x129-1.jpg" border="0" /></p>
+<h2>Collaboration</h2>
+<p><em>“Collaboration begins with mutual understanding and respect.”</em> – Astronaut Ron Garen</p>
+<p>Collaboration is at the heart of our core values. At Publishing Services, we foster a collaborative and transparent environment that promotes learning, innovation, and brings out the best in each of our employees.</p>
+<p>Our professional relationships are no different. We collaborate with experts and industry leaders in all our endeavors as we strive to provide our clients the very best business solutions and product offerings. We’ve worked hard to develop a culture of transparency and collaboration in order to put our clients first.</p>
+<p>We promise to be a true partner, here to help you grow and succeed.</p>
+</div>
+<div class="span_4 key-area">
+<p><img src="https://dev.pubsvs.com/wp-content/uploads/2016/04/spotlight-quality-1-300x129.jpg" border="0" /></p>
+<h2>Quality</h2>
+<p><em>“Quality is not an act, it is a habit.”</em> &#8211; Aristotle</p>
+<p>We are committed to very high standards, and to offering our clients only products that are stable, robust, and scalable. In short, we are laser-focused on quality. This mindset lives in every branch of our business. We don’t accept just “okay” in anything we do, and while our teams can be nimble and fast when necessary, we believe that accuracy is speed.</p>
+<p>We promise to bring true quality to all the products and services we offer.</p>
+</div>
+</div>
+</div>
+</article><!-- #post-## -->
+
+			<div class="inner-spotlight">
+													<div class="span_6 spotlight">
+						<h3>blah blah blah</h3>
+													<p>Blah blah blah lbahlbhalhwrighwr</p>
+												<button class="button-spotlight" onclick="window.location.href='https://dev.pubsvs.com/?p=371'">Learn More</button>
+					</div>
+									<div class="span_6 spotlight">
+						<h3>Not Selling Fishing Gear</h3>
+													<p>Publishing Services has now decided to not sell fishing gear. We will sell software and will not in fact sell bait and tackle. We will not be hosting fishing trips on our very own chartered boat. If you still want fishing trips, please find another company that does this.</p>
+												<button class="button-spotlight" onclick="window.location.href='http://pubsvs.dev/?p=44'">Learn More</button>
+					</div>
+							</div>
+		</div>
+	</main>
+	<script>
+		$(window).load(function() {
+			// Define the tour!
+			var tour = {
+				id: "homepage-tour",
+				steps: [
+					{
+						title: "Application Information",
+						content: "If you are an existing client, click here to log in and view all of the application documentation.",
+						target: "header-app-info",
+						placement: "left",
+						onNext: function() {
+							$('#prod-dropdown').addClass('tour-enabled');
+						},
+						yOffset: -20
+					},
+					{
+						title: "Products & Services",
+						content: "Find the department and specific user guides you are looking for here.",
+						target: 'prod-dropdown',
+						placement: "bottom"
+					}
+				],
+				onEnd: function() {
+					$('#prod-dropdown').removeClass('tour-enabled');
+					document.cookie = "homeTourEnded=true"
+				}
+			};
+
+			// Start the tour!
+			if(!getCookie("homeTourEnded")) {
+				hopscotch.startTour(tour);
+			}
+		});
+	</script>
+
+<footer>
+	<div class="outer-footer">
+		<div id="inner-footer">&copy; Copyright 2016 Publishing Services
+			<ul>
+				<li><a href="https://dev.pubsvs.com">Home</a></li>
+				<li><a href="https://dev.pubsvs.com/about-us">About</a></li>
+				<li><a href="https://dev.pubsvs.com/products-services">Products &amp; Services</a></li>
+				<li><a href="https://dev.pubsvs.com/contact-us">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+</div><!-- END #main-content -->
+</div>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-content/themes/pub/js/navigation.js?ver=20151215'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-content/themes/pub/js/skip-link-focus-fix.js?ver=20151215'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-content/themes/pub/js/hopscotch.min.js?ver=20151215'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-content/themes/pub/js/scripts.js?ver=20151215'></script>
+<script type='text/javascript' src='http://dev.pubsvs.com/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+</body>
+</html>
